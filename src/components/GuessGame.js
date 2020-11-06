@@ -36,7 +36,7 @@ class GuessGame extends React.Component {
     }
 
     isValid = (value) => {
-        return value.length === 4 && value[0] !== "0" ? true : false;  //checking number length
+        return (value.length === 4 && value[0] !== "0");  //checking number length
     }
 
     showErrorAlert = () => {
@@ -101,12 +101,12 @@ class GuessGame extends React.Component {
                 </Form>
             </Card>
             <ResultList oldGuesses={oldGuesses} />
-            <Button color="primary" onClick={this.openNewGame} block>Yeni Oyun</Button>
+            {oldGuesses.length > 0 ? <Button color="primary" onClick={this.openNewGame} block>Yeni Oyun</Button>: ""}
             <small>*Sonuç konsoldan bakılabilir</small>
             <Alert className="alert" color="danger" isOpen={errorAlertVisible}>
                 Lütfen 4 haneli bir sayı giriniz.
             </Alert>
-            <Modal isOpen={winModalVisible}>
+            <Modal isOpen={winModalVisible} size="sm">
                 <ModalBody className="m-auto">
                     Sayıyı başarıyla tahmin ettiniz!
                 </ModalBody>
