@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+.game-board {
+  margin: auto;
+  min-height: 20rem;
+  padding: 10px;
+}
+
+
+.alert {
+  width: 20rem;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  margin: 2rem 2rem;
+  z-index: 10;
+}
