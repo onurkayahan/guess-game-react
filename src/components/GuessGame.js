@@ -31,12 +31,12 @@ class GuessGame extends React.Component {
 
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            this.isValid ? this.checkGuess() : this.showErrorAlert();
+            this.isValid() ? this.checkGuess() : this.showErrorAlert();
         }
     }
 
-    isValid = (value) => {
-        return (value.length === 4 && value[0] !== "0");  //checking number length
+    isValid = () => {
+        return (this.state.guess.length === 4 && this.state.guess[0] !== "0");  //checking number length
     }
 
     showErrorAlert = () => {
